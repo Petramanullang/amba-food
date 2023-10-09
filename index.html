@@ -34,7 +34,6 @@
       }
 
       body {
-        background-color: var(--cream);
         font-family: var(--poppins);
       }
 
@@ -65,21 +64,32 @@
 
       .card {
         border: none;
-        background-color: var(--cream);
         margin: 0 auto;
+        width: 18rem;
       }
 
       .card img {
         border-radius: 10px;
       }
 
-      @media (max-width: 1000px) {
+      @media (max-width: 575px) {
+        .card {
+          width: 10rem !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* atur masalah toggler */
         .navbar-toggler {
           border: 2px solid var(--yellow-dark);
+          box-shadow: 2px 2px var(--yellow-dark) !important;
         }
 
         .navbar-toggler:hover {
-          box-shadow: 2px 2px var(--yellow-dark) !important;
+          box-shadow: none !important;
+        }
+        .navbar-toggler:active {
+          box-shadow: none;
         }
 
         .nav-item #beranda {
@@ -102,6 +112,27 @@
           height: 200px;
         }
 
+        .card {
+          width: 15rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .nav-item #beranda {
+          border-bottom: none;
+        }
+
+        #nav-right {
+          margin-top: 30px;
+          margin-left: 50px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        #nav-right button {
+          display: none;
+        }
       }
     </style>
   </head>
@@ -119,7 +150,8 @@
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation"
+            data-bs-backdrop="">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -230,8 +262,8 @@
         <section>
           <div class="container mt-3 mb-3 p-3 d-flex justify-content-center">
             <div class="row">
-              <div class="col-sm col">
-                <div class="card" style="width: 18rem">
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
                   <img
                     src="./assets/card1.png"
                     class="card-img-top"
@@ -241,8 +273,8 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm col">
-                <div class="card" style="width: 18rem">
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
                   <img
                     src="./assets/card1.png"
                     class="card-img-top"
@@ -252,8 +284,8 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm col">
-                <div class="card" style="width: 18rem">
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
                   <img
                     src="./assets/card1.png"
                     class="card-img-top"
@@ -263,8 +295,8 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm col">
-                <div class="card" style="width: 18rem">
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
                   <img
                     src="./assets/card1.png"
                     class="card-img-top"
