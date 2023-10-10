@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <!-- icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet" />
+    <link rel="shortcut icon" type="x-icon" href="./assets/ambafood2.png" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,400;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <title>AF | Beranda</title>
+    <style>
+      :root {
+        /* color */
+        --cream: #fff5e1;
+        --yellow-dark: #af9a2d;
+        --blue: #a1ccd1;
+        /* font-family */
+        --mochiy: "Mochiy Pop P One", sans-serif;
+        --poppins: "Poppins", sans-serif;
+        --work-sans: "Work Sans", sans-serif;
+      }
+
+      body {
+        font-family: var(--poppins);
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .nav-item #beranda {
+        border-bottom: 2px solid #af9a2d;
+      }
+
+      #nav-right a :hover,
+      #nav-right button:hover {
+        color: var(--yellow-dark);
+      }
+
+      #nav-right button {
+        background-color: white;
+        font-size: 20px;
+        border: none;
+      }
+
+      .carousel-item img {
+        height: 400px;
+        object-fit: fill;
+      }
+
+      .card {
+        border: none;
+        margin: 0 auto;
+        width: 18rem;
+        border: 1px solid #af9a2d;
+        margin: 10px;
+      }
+
+      @media (max-width: 575px) {
+        .card {
+          width: 10rem !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* atur masalah toggler */
+        .navbar-toggler {
+          border: 2px solid var(--yellow-dark);
+          box-shadow: 2px 2px var(--yellow-dark) !important;
+        }
+
+        .navbar-toggler:hover {
+          box-shadow: none !important;
+        }
+        .navbar-toggler:active {
+          box-shadow: none;
+        }
+
+        .nav-item #beranda {
+          border-bottom: none;
+        }
+
+        #nav-right {
+          margin-top: 30px;
+          margin-left: 50px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        #nav-right button {
+          display: none;
+        }
+
+        .carousel-item img {
+          height: 200px;
+        }
+
+        .card {
+          width: 15rem;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .nav-item #beranda {
+          border-bottom: none;
+        }
+
+        #nav-right {
+          margin-top: 30px;
+          margin-left: 50px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        #nav-right button {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-white shadow-sm"
+        style="font-weight: 600">
+        <div class="container-fluid">
+          <img src="./assets/Amba-food-icon.svg" alt="" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            data-bs-backdrop="">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-1">
+              <li class="nav-item">
+                <a
+                  class="nav-link active border-2 pb-2"
+                  aria-current="page"
+                  href="#"
+                  id="beranda"
+                  >Beranda</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Rekomendasi</a>
+              </li>
+            </ul>
+            <form
+              class="d-flex border border-black me-4 border-2 rounded-5"
+              role="search">
+              <input
+                class="form-control border-0 shadow-none border-0 rounded-5"
+                type="text"
+                placeholder="Mau makan apa?"
+                aria-label="Search"
+                autocomplete="off" />
+              <button class="btn" type="submit">
+                <i class="ri ri-search-line fw-bolder text-black"></i>
+              </button>
+            </form>
+            <div
+              class="navbar-nav mb-3 me-5 mb-lg-0 gap-4 align-items-center"
+              id="nav-right">
+              <a href="./public/sign-in.html"><span>Gabung</span></a>
+              <div class="dropdown">
+                <button
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  id="dropdownMenuButton">
+                  <i class="ri ri-shopping-cart-2-line"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-end text-center mt-3"
+                  aria-labelledby="dropdownMenuButton"
+                  style="width: 350px">
+                  <h6 class="dropdown-item fw-bold text-start">Pesanan Anda</h6>
+                  <p style="font-size: 12px; color: var(--yellow-dark)">
+                    Anda belum Memesan apapun
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container mt-3">
+      <main>
+        <!-- carousel -->
+        <section>
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Slide 1"></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner rounded-4 shadow-sm">
+              <div class="carousel-item active">
+                <img
+                  src="./assets/carousel1.png"
+                  class="d-block w-100"
+                  alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./assets/carousel2.png"
+                  class="d-block w-100"
+                  alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./assets/carousel3.png"
+                  class="d-block w-100"
+                  alt="..." />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- card -->
+        <section>
+          <div class="container mt-3 mb-3 p-3 d-flex justify-content-center">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <a href="">
+                  <div class="card">
+                    <img
+                      src="./assets/card/card1.png"
+                      class="card-img-top"
+                      alt="..." />
+                    <div class="card-body">
+                      <p class="card-text">nasi padang</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+                <div class="card">
+                  <img
+                    src="./assets/card/card1.png"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <p class="card-text">nasi padang</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+  </body>
+</html>

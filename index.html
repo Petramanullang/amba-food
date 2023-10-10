@@ -13,6 +13,7 @@
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
       rel="stylesheet" />
+    <link rel="shortcut icon" type="x-icon" href="./assets/ambafood2.png" />
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +21,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,400;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet" />
-    <title>Document</title>
+    <title>AF | Beranda</title>
     <style>
       :root {
         /* color */
@@ -63,18 +64,51 @@
       }
 
       .card {
-        border: none;
+        border: 0.1px solid grey;
         margin: 0 auto;
+        margin-bottom: 20px;
         width: 18rem;
+        height: 23rem;
+        padding: 7px;
       }
 
       .card img {
-        border-radius: 10px;
+        height: 20rem;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      .card:hover {
+        box-shadow: 1px 1px 5px grey, 1px 1px 5px white;
       }
 
       @media (max-width: 575px) {
+        .title h2 {
+          font-size: 18px;
+          padding-left: 17px;
+        }
+
         .card {
+          height: 12rem;
           width: 10rem !important;
+        }
+
+        .card img {
+          height: 4rem;
+        }
+
+        .card-body h5 {
+          font-size: 16px;
+        }
+
+        .card-body p {
+          font-size: 12px;
+        }
+
+        .card-body i,
+        .card-body span {
+          font-size: 11px;
+          margin: 0px !important;
         }
       }
 
@@ -113,11 +147,11 @@
         }
 
         .card {
-          width: 15rem;
+          width: 20rem;
         }
       }
 
-      @media (max-width: 992px) {
+      @media (max-width: 991px) {
         .nav-item #beranda {
           border-bottom: none;
         }
@@ -132,6 +166,10 @@
 
         #nav-right button {
           display: none;
+        }
+
+        .card {
+          width: 20rem;
         }
       }
     </style>
@@ -185,7 +223,7 @@
             <div
               class="navbar-nav mb-3 me-5 mb-lg-0 gap-4 align-items-center"
               id="nav-right">
-              <a href=""><span>Gabung</span></a>
+              <a href="./public/login.html"><span>Gabung</span></a>
               <div class="dropdown">
                 <button
                   type="button"
@@ -209,108 +247,239 @@
       </nav>
     </header>
 
-    <div class="container mt-3">
-      <main>
-        <!-- carousel -->
-        <section>
-          <div
-            id="carouselExampleIndicators"
-            class="carousel slide"
-            data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+    <main>
+      <!-- carousel -->
+      <section class="p-3">
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner shadow-sm rounded-4">
+            <div class="carousel-item active">
+              <img
+                src="./assets/carousel1.png"
+                class="d-block w-100"
+                alt="..." />
             </div>
-            <div class="carousel-inner rounded-4 shadow-sm">
-              <div class="carousel-item active">
-                <img
-                  src="./assets/carousel1.png"
-                  class="d-block w-100"
-                  alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./assets/carousel2.png"
-                  class="d-block w-100"
-                  alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./assets/carousel3.png"
-                  class="d-block w-100"
-                  alt="..." />
-              </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/carousel2.png"
+                class="d-block w-100"
+                alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./assets/carousel3.png"
+                class="d-block w-100"
+                alt="..." />
             </div>
           </div>
-        </section>
-        <!-- card -->
-        <section>
-          <div class="container mt-3 mb-3 p-3 d-flex justify-content-center">
-            <div class="row">
-              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+        </div>
+      </section>
+
+      <section>
+        <hr class="border-2" />
+        <div
+          class="container d-flex justify-content-start justify-content-center title">
+          <h2 class="fw-bold">Pasti ada sesuatu buat tiap orang!</h2>
+        </div>
+      </section>
+
+      <!-- card -->
+      <section>
+        <div class="container mt-3 mb-3 p-3 d-flex justify-content-center">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+              <a href="">
                 <div class="card">
                   <img
-                    src="./assets/card1.png"
+                    src="./assets/card/card1.png"
                     class="card-img-top"
                     alt="..." />
                   <div class="card-body">
-                    <p class="card-text">nasi padang</p>
+                    <h5 class="card-text fw-bold">Nasi Padang</h5>
+                    <p class="card-text">Nasi, Ayam, Pedas</p>
+                    <i class="ri-map-pin-fill text-danger"></i>
+                    <span>0.7km</span>
+                    <span class="ms-2">•</span>
+                    <i
+                      class="ri-star-fill text-warning position-relative ms-3"
+                      style="top: 2px"></i>
+                    <span>4.7</span>
                   </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+              </a>
+            </div>
+            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+              <a href="">
                 <div class="card">
                   <img
-                    src="./assets/card1.png"
+                    src="./assets/card/card2.webp"
                     class="card-img-top"
                     alt="..." />
                   <div class="card-body">
-                    <p class="card-text">nasi padang</p>
+                    <h5 class="card-text fw-bold">Nasi Padang</h5>
+                    <p class="card-text">Nasi, Ayam, Pedas</p>
+                    <i class="ri-map-pin-fill text-danger"></i>
+                    <span>0.7km</span>
+                    <span class="ms-2">•</span>
+                    <i
+                      class="ri-star-fill text-warning position-relative ms-3"
+                      style="top: 2px"></i>
+                    <span>4.7</span>
                   </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+              </a>
+            </div>
+            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+              <a href="">
                 <div class="card">
                   <img
-                    src="./assets/card1.png"
+                    src="./assets/card/card3.webp"
                     class="card-img-top"
                     alt="..." />
                   <div class="card-body">
-                    <p class="card-text">nasi padang</p>
+                    <h5 class="card-text fw-bold">Nasi Padang</h5>
+                    <p class="card-text">Nasi, Ayam, Pedas</p>
+                    <i class="ri-map-pin-fill text-danger"></i>
+                    <span>0.7km</span>
+                    <span class="ms-2">•</span>
+                    <i
+                      class="ri-star-fill text-warning position-relative ms-3"
+                      style="top: 2px"></i>
+                    <span>4.7</span>
                   </div>
                 </div>
-              </div>
-              <div class="col-6 col-sm-6 col-xl-4 col-xxl-3">
+              </a>
+            </div>
+            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+              <a href="">
                 <div class="card">
                   <img
-                    src="./assets/card1.png"
+                    src="./assets/card/card4.webp"
                     class="card-img-top"
                     alt="..." />
                   <div class="card-body">
-                    <p class="card-text">nasi padang</p>
+                    <h5 class="card-text fw-bold">Nasi Padang</h5>
+                    <p class="card-text">Nasi, Ayam, Pedas</p>
+                    <i class="ri-map-pin-fill text-danger"></i>
+                    <span>0.7km</span>
+                    <span class="ms-2">•</span>
+                    <i
+                      class="ri-star-fill text-warning position-relative ms-3"
+                      style="top: 2px"></i>
+                    <span>4.7</span>
                   </div>
                 </div>
-              </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+              <a href="">
+                <div class="card">
+                  <img
+                    src="./assets/card/card5.webp"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold">Nasi Padang</h5>
+                    <p class="card-text">Nasi, Ayam, Pedas</p>
+                    <i class="ri-map-pin-fill text-danger"></i>
+                    <span>0.7km</span>
+                    <span class="ms-2">•</span>
+                    <i
+                      class="ri-star-fill text-warning position-relative ms-3"
+                      style="top: 2px"></i>
+                    <span>4.7</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+              <a href="">
+                <div class="card">
+                  <img
+                    src="./assets/card/card6.webp"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold">Nasi Padang</h5>
+                    <p class="card-text">Nasi, Ayam, Pedas</p>
+                    <i class="ri-map-pin-fill text-danger"></i>
+                    <span>0.7km</span>
+                    <span class="ms-2">•</span>
+                    <i
+                      class="ri-star-fill text-warning position-relative ms-3"
+                      style="top: 2px"></i>
+                    <span>4.7</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+              <a href="">
+                <div class="card">
+                  <img
+                    src="./assets/card/card7.webp"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold">Nasi Padang</h5>
+                    <p class="card-text">Nasi, Ayam, Pedas</p>
+                    <i class="ri-map-pin-fill text-danger"></i>
+                    <span>0.7km</span>
+                    <span class="ms-2">•</span>
+                    <i
+                      class="ri-star-fill text-warning position-relative ms-3"
+                      style="top: 2px"></i>
+                    <span>4.7</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+              <a href="">
+                <div class="card">
+                  <img
+                    src="./assets/card/card8.webp"
+                    class="card-img-top"
+                    alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-text fw-bold">Nasi Padang</h5>
+                    <p class="card-text">Nasi, Ayam, Pedas</p>
+                    <i class="ri-map-pin-fill text-danger"></i>
+                    <span>0.7km</span>
+                    <span class="ms-2">•</span>
+                    <i
+                      class="ri-star-fill text-warning position-relative ms-3"
+                      style="top: 2px"></i>
+                    <span>4.7</span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
-        </section>
-      </main>
-    </div>
+        </div>
+      </section>
+    </main>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
