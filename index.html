@@ -28,6 +28,7 @@
         --cream: #fff5e1;
         --yellow-dark: #af9a2d;
         --blue: #a1ccd1;
+        --grey: #f1efef;
         /* font-family */
         --mochiy: "Mochiy Pop P One", sans-serif;
         --poppins: "Poppins", sans-serif;
@@ -58,13 +59,97 @@
         border: none;
       }
 
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px); /* Mengatur tingkat blur yang diinginkan */
+      }
+
+      .modal-content {
+        margin-top: 15vh;
+        margin-right: 30px;
+      }
+
+      .wrapper {
+        max-width: 350px;
+        min-height: 500px;
+        padding: 40px 30px 30px 30px;
+        background-color: #ecf0f3;
+        border-radius: 15px;
+        box-shadow: -3px -5px 20px #cbced1, 3px 3px 15px #fff;
+      }
+
+      .logo {
+        width: 80px;
+        margin: auto;
+      }
+
+      .logo img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .wrapper .form-field input {
+        width: 100%;
+        display: block;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 1.2rem;
+        color: #666;
+        padding: 10px 15px 10px 10px;
+      }
+
+      .wrapper .form-field {
+        padding-left: 10px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: inset 2px 2px 2px #cbced1, inset -2px -2px 2px #fff;
+      }
+
+      .wrapper .form-field .fas {
+        color: #555;
+      }
+
+      .wrapper .btn {
+        box-shadow: none;
+        width: 100%;
+        height: 40px;
+        background-color: var(--yellow-dark);
+        color: #fff;
+        border-radius: 25px;
+        box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+        letter-spacing: 1.3px;
+      }
+
+      .wrapper .btn:hover {
+        background-color: salmon;
+      }
+
+      .wrapper a {
+        text-decoration: none;
+        font-size: 0.8rem;
+        color: #03a9f4;
+      }
+
+      .wrapper a:hover {
+        color: #039be5;
+      }
+
       .carousel-item img {
         height: 400px;
         object-fit: fill;
       }
 
       .card {
-        border: 0.1px solid grey;
+        border: 2px solid var(--grey);
         margin: 0 auto;
         margin-bottom: 20px;
         width: 18rem;
@@ -73,28 +158,23 @@
       }
 
       .card img {
-        height: 20rem;
-        border-radius: 5px;
+        height: 15rem;
         object-fit: cover;
+        border-radius: 5px;
       }
 
       .card:hover {
         box-shadow: 1px 1px 5px grey, 1px 1px 5px white;
       }
 
-      @media (max-width: 575px) {
-        .title h2 {
-          font-size: 18px;
-          padding-left: 17px;
-        }
-
+      @media (max-width: 375px) {
         .card {
-          height: 12rem;
-          width: 10rem !important;
+          width: 10rem;
+          height: 15rem;
         }
 
         .card img {
-          height: 4rem;
+          height: 6rem;
         }
 
         .card-body h5 {
@@ -105,10 +185,42 @@
           font-size: 12px;
         }
 
-        .card-body i,
-        .card-body span {
-          font-size: 11px;
-          margin: 0px !important;
+        .card-location-rating {
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .title h2 {
+          font-size: 18px;
+          padding-left: 17px;
+        }
+
+        .card {
+          width: 9rem !important;
+          height: 12rem !important;
+        }
+
+        .card img {
+          height: 4.5rem !important;
+        }
+
+        .card-body {
+          padding: 0;
+          padding-top: 20px;
+          padding-left: 10px;
+        }
+
+        .card-body h5 {
+          font-size: 13px !important;
+        }
+
+        .card-body p {
+          font-size: 10px !important;
+        }
+
+        .card-location-rating {
+          font-size: 9px !important;
         }
       }
 
@@ -116,11 +228,11 @@
         /* atur masalah toggler */
         .navbar-toggler {
           border: 2px solid var(--yellow-dark);
-          box-shadow: 2px 2px var(--yellow-dark) !important;
+          box-shadow: 2px 2px var(--yellow-dark);
         }
 
         .navbar-toggler:hover {
-          box-shadow: none !important;
+          box-shadow: none;
         }
         .navbar-toggler:active {
           box-shadow: none;
@@ -147,15 +259,11 @@
         }
 
         .card {
-          width: 20rem;
+          width: 10rem !important;
         }
       }
 
-      @media (max-width: 991px) {
-        .nav-item #beranda {
-          border-bottom: none;
-        }
-
+      @media (max-width: 990px) {
         #nav-right {
           margin-top: 30px;
           margin-left: 50px;
@@ -163,13 +271,35 @@
           flex-direction: row;
           justify-content: center;
         }
-
         #nav-right button {
           display: none;
         }
+      }
+
+      @media (max-width: 992px) {
+        .nav-item #beranda {
+          border-bottom: none;
+        }
 
         .card {
-          width: 20rem;
+          width: 10rem !important;
+          height: 15rem;
+        }
+
+        .card img {
+          height: 7rem;
+        }
+
+        .card-body h5 {
+          font-size: 16px;
+        }
+
+        .card-body p {
+          font-size: 12px;
+        }
+
+        .card-location-rating {
+          font-size: 11px;
         }
       }
     </style>
@@ -223,7 +353,12 @@
             <div
               class="navbar-nav mb-3 me-5 mb-lg-0 gap-4 align-items-center"
               id="nav-right">
-              <a href="./public/login.html"><span>Gabung</span></a>
+              <a
+                href="./public/login.html"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                ><span class="gabung">Gabung</span></a
+              >
               <div class="dropdown">
                 <button
                   type="button"
@@ -246,6 +381,100 @@
         </div>
       </nav>
     </header>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div
+          class="container modal-content border-0 bg-transparent d-flex justify-content-center align-items-center">
+          <div class="wrapper">
+            <div class="text-center mt-4 me-2">
+              <img src="../assets/Amba-food-icon.svg" alt="" />
+            </div>
+            <form class="p-3 mt-3" action="./">
+              <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  placeholder="Email" />
+              </div>
+              <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input
+                  type="password"
+                  name="password"
+                  id="pwd"
+                  required
+                  placeholder="Password" />
+              </div>
+              <button class="btn mt-3">Login</button>
+            </form>
+            <div class="text-center fs-6">
+              <a href="#">Forget password?</a> or
+              <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1"
+                >Sign up</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal1"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div
+          class="container modal-content border-0 bg-transparent d-flex justify-content-center align-items-center">
+          <div class="wrapper">
+            <div class="text-center mt-4 me-2">
+              <img src="../assets/Amba-food-icon.svg" alt="" />
+            </div>
+            <form class="p-3 mt-3" action="./">
+              <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input
+                  type="text"
+                  name="Username"
+                  id="Username"
+                  required
+                  placeholder="Username" />
+              </div>
+              <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  placeholder="Email" />
+              </div>
+              <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input
+                  type="password"
+                  name="password"
+                  id="pwd"
+                  required
+                  placeholder="Password" />
+              </div>
+              <button class="btn mt-3">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <main>
       <!-- carousel -->
@@ -298,17 +527,16 @@
 
       <section>
         <hr class="border-2" />
-        <div
-          class="container d-flex justify-content-center title">
+        <div class="container d-flex justify-content-center title">
           <h2 class="fw-bold me-3">Pasti ada sesuatu buat tiap orang!</h2>
         </div>
       </section>
 
       <!-- card -->
       <section>
-        <div class="container mt-3 mb-3 p-3 d-flex justify-content-center">
+        <div class="mt-3 mb-3 p-3 d-flex justify-content-center">
           <div class="row">
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <a href="">
                 <div class="card">
                   <img
@@ -318,18 +546,20 @@
                   <div class="card-body">
                     <h5 class="card-text fw-bold">Nasi Padang</h5>
                     <p class="card-text">Nasi, Ayam, Pedas</p>
-                    <i class="ri-map-pin-fill text-danger"></i>
-                    <span>0.7km</span>
-                    <span class="ms-2">•</span>
-                    <i
-                      class="ri-star-fill text-warning position-relative ms-3"
-                      style="top: 2px"></i>
-                    <span>4.7</span>
+                    <div class="card-location-rating">
+                      <i class="ri-map-pin-fill text-danger"></i>
+                      <span>0.7km</span>
+                      <span class="ms-1">•</span>
+                      <i
+                        class="ri-star-fill text-warning position-relative ms-1"
+                        style="top: 2px"></i>
+                      <span>4.7</span>
+                    </div>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <a href="">
                 <div class="card">
                   <img
@@ -339,18 +569,20 @@
                   <div class="card-body">
                     <h5 class="card-text fw-bold">Nasi Padang</h5>
                     <p class="card-text">Nasi, Ayam, Pedas</p>
-                    <i class="ri-map-pin-fill text-danger"></i>
-                    <span>0.7km</span>
-                    <span class="ms-2">•</span>
-                    <i
-                      class="ri-star-fill text-warning position-relative ms-3"
-                      style="top: 2px"></i>
-                    <span>4.7</span>
+                    <div class="card-location-rating">
+                      <i class="ri-map-pin-fill text-danger"></i>
+                      <span>0.7km</span>
+                      <span class="ms-1">•</span>
+                      <i
+                        class="ri-star-fill text-warning position-relative ms-1"
+                        style="top: 2px"></i>
+                      <span>4.7</span>
+                    </div>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <a href="">
                 <div class="card">
                   <img
@@ -360,18 +592,20 @@
                   <div class="card-body">
                     <h5 class="card-text fw-bold">Nasi Padang</h5>
                     <p class="card-text">Nasi, Ayam, Pedas</p>
-                    <i class="ri-map-pin-fill text-danger"></i>
-                    <span>0.7km</span>
-                    <span class="ms-2">•</span>
-                    <i
-                      class="ri-star-fill text-warning position-relative ms-3"
-                      style="top: 2px"></i>
-                    <span>4.7</span>
+                    <div class="card-location-rating">
+                      <i class="ri-map-pin-fill text-danger"></i>
+                      <span>0.7km</span>
+                      <span class="ms-1">•</span>
+                      <i
+                        class="ri-star-fill text-warning position-relative ms-1"
+                        style="top: 2px"></i>
+                      <span>4.7</span>
+                    </div>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <a href="">
                 <div class="card">
                   <img
@@ -381,18 +615,20 @@
                   <div class="card-body">
                     <h5 class="card-text fw-bold">Nasi Padang</h5>
                     <p class="card-text">Nasi, Ayam, Pedas</p>
-                    <i class="ri-map-pin-fill text-danger"></i>
-                    <span>0.7km</span>
-                    <span class="ms-2">•</span>
-                    <i
-                      class="ri-star-fill text-warning position-relative ms-3"
-                      style="top: 2px"></i>
-                    <span>4.7</span>
+                    <div class="card-location-rating">
+                      <i class="ri-map-pin-fill text-danger"></i>
+                      <span>0.7km</span>
+                      <span class="ms-1">•</span>
+                      <i
+                        class="ri-star-fill text-warning position-relative ms-1"
+                        style="top: 2px"></i>
+                      <span>4.7</span>
+                    </div>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <a href="">
                 <div class="card">
                   <img
@@ -402,18 +638,20 @@
                   <div class="card-body">
                     <h5 class="card-text fw-bold">Nasi Padang</h5>
                     <p class="card-text">Nasi, Ayam, Pedas</p>
-                    <i class="ri-map-pin-fill text-danger"></i>
-                    <span>0.7km</span>
-                    <span class="ms-2">•</span>
-                    <i
-                      class="ri-star-fill text-warning position-relative ms-3"
-                      style="top: 2px"></i>
-                    <span>4.7</span>
+                    <div class="card-location-rating">
+                      <i class="ri-map-pin-fill text-danger"></i>
+                      <span>0.7km</span>
+                      <span class="ms-1">•</span>
+                      <i
+                        class="ri-star-fill text-warning position-relative ms-1"
+                        style="top: 2px"></i>
+                      <span>4.7</span>
+                    </div>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <a href="">
                 <div class="card">
                   <img
@@ -423,18 +661,20 @@
                   <div class="card-body">
                     <h5 class="card-text fw-bold">Nasi Padang</h5>
                     <p class="card-text">Nasi, Ayam, Pedas</p>
-                    <i class="ri-map-pin-fill text-danger"></i>
-                    <span>0.7km</span>
-                    <span class="ms-2">•</span>
-                    <i
-                      class="ri-star-fill text-warning position-relative ms-3"
-                      style="top: 2px"></i>
-                    <span>4.7</span>
+                    <div class="card-location-rating">
+                      <i class="ri-map-pin-fill text-danger"></i>
+                      <span>0.7km</span>
+                      <span class="ms-1">•</span>
+                      <i
+                        class="ri-star-fill text-warning position-relative ms-1"
+                        style="top: 2px"></i>
+                      <span>4.7</span>
+                    </div>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <a href="">
                 <div class="card">
                   <img
@@ -444,18 +684,20 @@
                   <div class="card-body">
                     <h5 class="card-text fw-bold">Nasi Padang</h5>
                     <p class="card-text">Nasi, Ayam, Pedas</p>
-                    <i class="ri-map-pin-fill text-danger"></i>
-                    <span>0.7km</span>
-                    <span class="ms-2">•</span>
-                    <i
-                      class="ri-star-fill text-warning position-relative ms-3"
-                      style="top: 2px"></i>
-                    <span>4.7</span>
+                    <div class="card-location-rating">
+                      <i class="ri-map-pin-fill text-danger"></i>
+                      <span>0.7km</span>
+                      <span class="ms-1">•</span>
+                      <i
+                        class="ri-star-fill text-warning position-relative ms-1"
+                        style="top: 2px"></i>
+                      <span>4.7</span>
+                    </div>
                   </div>
                 </div>
               </a>
             </div>
-            <div class="col-6 col-sm-6 col-lg-4 col-xl-4 col-xxl-3">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
               <a href="">
                 <div class="card">
                   <img
@@ -465,13 +707,15 @@
                   <div class="card-body">
                     <h5 class="card-text fw-bold">Nasi Padang</h5>
                     <p class="card-text">Nasi, Ayam, Pedas</p>
-                    <i class="ri-map-pin-fill text-danger"></i>
-                    <span>0.7km</span>
-                    <span class="ms-2">•</span>
-                    <i
-                      class="ri-star-fill text-warning position-relative ms-3"
-                      style="top: 2px"></i>
-                    <span>4.7</span>
+                    <div class="card-location-rating">
+                      <i class="ri-map-pin-fill text-danger"></i>
+                      <span>0.7km</span>
+                      <span class="ms-1">•</span>
+                      <i
+                        class="ri-star-fill text-warning position-relative ms-1"
+                        style="top: 2px"></i>
+                      <span>4.7</span>
+                    </div>
                   </div>
                 </div>
               </a>
