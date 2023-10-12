@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <!-- icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet" />
+    <link rel="shortcut icon" type="x-icon" href="../assets/ambafood2.png" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,400;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <title>AF | RM.Selero Bundo</title>
+    <style>
+      ::-webkit-scrollbar {
+        width: 0px;
+      }
+
+      :root {
+        /* color */
+        --cream: #fff5e1;
+        --yellow-dark: #af9a2d;
+        --blue: #a1ccd1;
+        --grey: #f1efef;
+        /* font-family */
+        --mochiy: "Mochiy Pop P One", sans-serif;
+        --poppins: "Poppins", sans-serif;
+        --work-sans: "Work Sans", sans-serif;
+      }
+
+      body {
+        font-family: var(--poppins);
+        background-color: #f0f0f0;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #nav-right a :hover,
+      #nav-right button:hover {
+        color: var(--yellow-dark);
+      }
+
+      #nav-right button {
+        background-color: white;
+        font-size: 20px;
+        border: none;
+      }
+
+      .custom-alert {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+      }
+
+      .breadcrumb {
+        font-size: 15px;
+      }
+
+      .breadcrumb a:hover {
+        color: var(--yellow-dark);
+      }
+
+      .headers {
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+        padding-bottom: 1px;
+      }
+
+      .head {
+        padding-top: 20px;
+        background-color: white;
+      }
+
+      .card__list {
+        max-width: 1400px;
+        margin: 2rem auto;
+      }
+
+      .card {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 170px;
+        margin-bottom: 1.5rem;
+        padding: 10px;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+        transition: all 0.25s ease-in;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+      }
+
+      .card__img {
+        flex: 1 30%;
+      }
+
+      .card__img img {
+        border-radius: 10px;
+      }
+
+      .card__img-preview {
+        display: block;
+        object-fit: cover;
+        margin: 0 auto;
+        min-width: 150px;
+        max-width: 100%;
+        min-height: 100%;
+        transition: all 0.5s ease 0s;
+      }
+
+      .card-img-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.5rem;
+      }
+      .card__content {
+        flex: 1 70%;
+        padding: 0.8rem;
+      }
+      .card__title {
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      .card__text {
+        font-size: 13px;
+        margin: 0;
+      }
+
+      .card__price {
+        color: Black;
+        margin-top: 30px;
+        margin-right: 200px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .footer-dark {
+        padding: 50px 0;
+        color: #f0f9ff;
+        background-color: #363a45;
+      }
+
+      .footer-dark h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .footer-dark ul {
+        padding: 0;
+        list-style: none;
+        line-height: 1.6;
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+
+      .footer-dark ul a {
+        color: inherit;
+        text-decoration: none;
+        opacity: 0.6;
+      }
+
+      .footer-dark ul a:hover {
+        opacity: 0.8;
+      }
+
+      .footer-dark .item.text {
+        margin-bottom: 36px;
+      }
+
+      .footer-dark .item.text p {
+        opacity: 0.6;
+        margin-bottom: 0;
+      }
+
+      .footer-dark .item.social {
+        text-align: center;
+      }
+
+      .footer-dark .item.social > a {
+        font-size: 20px;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+        margin: 0 8px;
+        color: #fff;
+        opacity: 0.75;
+      }
+
+      .footer-dark .item.social .facebook:hover {
+        color: #1877f2;
+      }
+      .footer-dark .item.social .youtube:hover {
+        color: #ff0000;
+      }
+      .footer-dark .item.social .linkedin:hover {
+        color: #0a66c2;
+      }
+      .footer-dark .item.social .instagram:hover {
+        color: rgba(169, 0, 91, 1);
+      }
+
+      .footer-dark .copyright {
+        text-align: center;
+        padding-top: 24px;
+        opacity: 0.3;
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 575px) {
+        .title h2 {
+          font-size: 18px;
+          padding-left: 17px;
+        }
+
+        .card {
+          flex-direction: row !important;
+          height: auto;
+        }
+
+        .promo span {
+          font-size: 15px;
+        }
+
+        .headers-img {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* atur masalah toggler */
+        .navbar-toggler {
+          border: 2px solid var(--yellow-dark);
+          box-shadow: 2px 2px var(--yellow-dark);
+        }
+
+        .navbar-toggler:hover {
+          box-shadow: none;
+        }
+        .navbar-toggler:active {
+          box-shadow: none;
+        }
+
+        .nav-item #beranda {
+          border-bottom: none;
+        }
+
+        #nav-right {
+          margin-top: 30px;
+          margin-left: 50px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+
+        #nav-right button {
+          display: none;
+        }
+
+        .card__price {
+          margin-right: 100px;
+        }
+
+        .footer-dark .item.text {
+          margin-bottom: 0;
+        }
+
+        .footer-dark .item:not(.social) {
+          text-align: center;
+          padding-bottom: 20px;
+        }
+
+        .headers-img {
+          display: none;
+        }
+      }
+
+      @media (max-width: 990px) {
+        #nav-right {
+          margin-top: 30px;
+          margin-left: 50px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+        #nav-right button {
+          display: none;
+        }
+
+        .headers-img {
+          display: none;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .nav-item #beranda {
+          border-bottom: none;
+        }
+
+        .footer-dark .item.social {
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        .card {
+          flex-direction: column;
+          height: auto;
+        }
+
+        .card__price {
+          margin-right: 100px;
+        }
+
+        .headers-img {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header style="margin-bottom: 70px">
+      <nav
+        class="navbar navbar-expand-lg bg-white shadow-sm fixed-top"
+        style="font-weight: 600">
+        <div class="container-fluid">
+          <img src="../assets/Amba-food-icon.svg" alt="" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            data-bs-backdrop="">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mt-1">
+              <li class="nav-item">
+                <a
+                  class="nav-link border-2 pb-2"
+                  aria-current="page"
+                  href="../index.html"
+                  id="beranda"
+                  >Beranda</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../public/rekomendasi.html"
+                  >Rekomendasi</a
+                >
+              </li>
+            </ul>
+            <form
+              class="d-flex border border-black me-4 border-2 rounded-5"
+              role="search">
+              <input
+                class="form-control border-0 shadow-none border-0 rounded-5"
+                type="text"
+                placeholder="Mau makan apa?"
+                aria-label="Search"
+                autocomplete="off" />
+              <button class="btn" type="submit">
+                <i class="ri ri-search-line fw-bolder text-black"></i>
+              </button>
+            </form>
+            <div
+              class="navbar-nav mb-3 me-5 mb-lg-0 gap-4 align-items-center"
+              id="nav-right">
+              <a
+                href="./public/login.html"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                ><span class="gabung">Gabung</span></a
+              >
+              <div class="dropdown">
+                <button
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  id="dropdownMenuButton">
+                  <i class="ri ri-shopping-cart-2-line"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-end mt-3"
+                  aria-labelledby="dropdownMenuButton"
+                  style="width: 350px; text-align: center">
+                  <h6 class="dropdown-item fw-bold text-start">Pesanan Anda</h6>
+                  <p style="font-size: 12px; color: var(--yellow-dark)">
+                    Anda belum Memesan apapun
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- modal login -->
+    <section>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div
+            class="container modal-content border-0 bg-transparent d-flex justify-content-center align-items-center">
+            <div class="wrapper">
+              <div class="text-center mt-4 me-2">
+                <img src="./assets/Amba-food-icon.svg" alt="" />
+              </div>
+              <form class="p-3 mt-3" action="./">
+                <div class="form-field d-flex align-items-center">
+                  <span class="far fa-user"></span>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    placeholder="Email" />
+                </div>
+                <div class="form-field d-flex align-items-center">
+                  <span class="fas fa-key"></span>
+                  <input
+                    type="password"
+                    name="password"
+                    id="pwd"
+                    required
+                    placeholder="Password" />
+                </div>
+                <button class="btn mt-3">Login</button>
+              </form>
+              <div class="text-center fs-6">
+                <a href="#">Forget password?</a> or
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal1"
+                  >Sign up</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- modal signup -->
+    <section>
+      <div
+        class="modal fade"
+        id="exampleModal1"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div
+            class="container modal-content border-0 bg-transparent d-flex justify-content-center align-items-center">
+            <div class="wrapper">
+              <div class="text-center mt-4 me-2">
+                <img src="./assets/Amba-food-icon.svg" alt="" />
+              </div>
+              <form class="p-3 mt-3" action="./">
+                <div class="form-field d-flex align-items-center">
+                  <span class="far fa-user"></span>
+                  <input
+                    type="text"
+                    name="Username"
+                    id="Username"
+                    required
+                    placeholder="Username" />
+                </div>
+                <div class="form-field d-flex align-items-center">
+                  <span class="far fa-user"></span>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    placeholder="Email" />
+                </div>
+                <div class="form-field d-flex align-items-center">
+                  <span class="fas fa-key"></span>
+                  <input
+                    type="password"
+                    name="password"
+                    id="pwd"
+                    required
+                    placeholder="Password" />
+                </div>
+                <button class="btn mt-3">Sign Up</button>
+              </form>
+              <div class="text-center fs-6">
+                have any account?
+                <a
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                  >Login</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="myAlert"
+      class="alert alert-danger fade mt-2 custom-alert alert-dismissible"
+      role="alert">
+      Pesanan Ini Belum Tersedia
+    </div>
+    <main>
+      <div class="head">
+        <!-- breadcrumb -->
+        <section class="container">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="../index.html">Beranda</a>
+              </li>
+              <li class="breadcrumb-item"><a href="#">RM.Selero Bundo</a></li>
+            </ol>
+          </nav>
+        </section>
+
+        <!-- headers -->
+        <section class="headers">
+          <div
+            class="container d-flex justify-content-between"
+            style="margin-bottom: 120px">
+            <div class="text-left">
+              <h1 class="fw-semibold">RM.Selero Bundo</h1>
+              <div class="d-flex">
+                <i class="ri-star-fill text-warning me-2"></i><span>4.7</span>
+                <i class="ri-time-line text-dark ms-5 me-1"></i
+                ><span>60 mnt • </span>
+                <span class="ms-2">0,7km</span>
+              </div>
+              <div class="d-flex gap-4 my-1">
+                <span>Jam Buka</span>
+                <span>Hari ini: 11:00-22.00</span>
+              </div>
+              <div class="d-flex promo">
+                <i class="ri-price-tag-3-line text-success me-2 my-1"></i
+                ><span class="my-1">Diskon Rp6.000 untuk ongkos kirim</span>
+              </div>
+              <div class="d-flex promo">
+                <i class="ri-price-tag-3-line text-success me-2 my-1"></i
+                ><span class="my-1"
+                  >HEMATMDO60G 60rb | HEMATMDO40G 40rb | PASTIDISKONG 20%</span
+                >
+              </div>
+            </div>
+            <img
+              src="../assets/card/card1.png"
+              class="rounded-5 p-0 headers-img"
+              style="height: 20vh; width: 20vw"
+              alt="" />
+          </div>
+        </section>
+      </div>
+
+      <section class="mt-2">
+        <div class="container">
+          <span class="fs-1 fw-bold">Ayam</span>
+        </div>
+      </section>
+
+      <!-- card -->
+      <section class="card__list row">
+        <div class="card__box col-md-4 col-sm-12">
+          <div class="card" onclick="toggleAlert()">
+            <div class="card__img">
+              <img
+                class="card__img-preview"
+                src="../assets/card/card1.png"
+                alt="Image name" />
+            </div>
+            <div class="card__content">
+              <h4 class="card__title"><a href="#">Nasi Padang</a></h4>
+              <div class="card__bottom">
+                <div class="options"></div>
+                <div class="card__price">24.000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card__box col-md-4 col-sm-12">
+          <div class="card" onclick="toggleAlert()">
+            <div class="card__img">
+              <img
+                class="card__img-preview"
+                src="../assets/card/card1.png"
+                alt="Image name" />
+            </div>
+            <div class="card__content">
+              <h4 class="card__title"><a href="#">Nasi Padang</a></h4>
+              <div class="card__bottom">
+                <div class="options"></div>
+                <div class="card__price">24.000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card__box col-md-4 col-sm-12">
+          <div class="card" onclick="toggleAlert()">
+            <div class="card__img">
+              <img
+                class="card__img-preview"
+                src="../assets/card/card1.png"
+                alt="Image name" />
+            </div>
+            <div class="card__content">
+              <h4 class="card__title"><a href="#">Nasi Padang</a></h4>
+              <div class="card__bottom">
+                <div class="options"></div>
+                <div class="card__price">24.000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="mt-2 mb-4">
+          <div class="container">
+            <span class="fs-1 fw-bold">Ikan</span>
+          </div>
+        </section>
+
+        <div class="card__box col-md-4 col-sm-12">
+          <div class="card" onclick="toggleAlert()">
+            <div class="card__img">
+              <img
+                class="card__img-preview"
+                src="../assets/card/card1.png"
+                alt="Image name" />
+            </div>
+            <div class="card__content">
+              <h4 class="card__title"><a href="#">Nasi Padang</a></h4>
+              <div class="card__bottom">
+                <div class="options"></div>
+                <div class="card__price">24.000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-dark">
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-3 item">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#">Cash On Delivery</a></li>
+                <li><a href="#">Return</a></li>
+                <li><a href="#">Complain</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 item">
+              <h3>About</h3>
+              <ul>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 item text">
+              <img
+                src="../assets/Amba-food-logo-footer.svg"
+                alt=""
+                class="mb-2" />
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam
+                hic nostrum veritatis asperiores ducimus, deleniti, impedit
+                magni excepturi atque ipsa architecto natus corrupti distinctio
+                consequatur.
+              </p>
+            </div>
+            <div class="col item social">
+              <a href="#"><i class="facebook ri-facebook-circle-fill"></i></a
+              ><a href="#"><i class="youtube ri-youtube-fill"></i></a
+              ><a href="#"><i class="linkedin ri-linkedin-fill"></i></a
+              ><a href="#"><i class="instagram ri-instagram-fill"></i></a>
+            </div>
+          </div>
+          <p class="copyright">Amba-food © 2023</p>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+    <script>
+      function toggleAlert() {
+        var alert = document.getElementById("myAlert");
+        if (alert.classList.contains("show")) {
+          alert.classList.remove("show");
+        } else {
+          alert.classList.add("show");
+          setTimeout(function () {
+            alert.classList.remove("show");
+          }, 3000);
+        }
+      }
+    </script>
+  </body>
+</html>
